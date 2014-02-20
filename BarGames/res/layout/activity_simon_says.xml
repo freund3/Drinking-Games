@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000000"
+    tools:context=".SimonSays" >
+
+    <LinearLayout
+        	android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical">
+            
+        <LinearLayout 
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1">
+        
+        	<ImageView android:id="@+id/green"
+            	android:layout_height="match_parent"
+            	android:layout_width="0dp"
+            	android:src="@drawable/green"
+            	android:layout_weight=".5"
+            	android:onClick="greenClicked"/>
+        	<ImageView android:id="@+id/yellow"
+            	android:layout_height="match_parent"
+            	android:layout_width="0dp"
+            	android:src="@drawable/yellow"
+            	android:layout_weight=".5"
+            	android:onClick="yellowClicked"/>
+        
+    	</LinearLayout>
+    
+        <LinearLayout
+         		android:layout_width="fill_parent"
+         		android:layout_height="wrap_content"
+         		android:layout_weight="1" >
+
+         	<ImageView android:id="@+id/red"
+            	android:layout_width="0dp"
+             	android:layout_height="wrap_content"
+             	android:layout_weight="1"
+             	android:src="@drawable/red" 
+             	android:onClick="redClicked"/>
+	
+         	<ImageView android:id="@+id/blue"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+             	android:layout_weight="1"
+             	android:src="@drawable/blue" 
+             	android:onClick="blueClicked"/>
+     	</LinearLayout>
+
+    </LinearLayout>
+    
+    <Button android:id="@+id/startGame"
+		android:layout_width="100sp"
+		android:layout_height="100sp"
+		android:background="@drawable/round_button"
+		android:gravity="center_vertical|center_horizontal"
+		android:text="@string/start"
+		android:layout_centerInParent="true"
+		android:textColor="#ffffff" 
+		android:onClick="startGame"/>
+    
+    <ImageView android:id="@+id/simonTurn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal" 
+            android:visibility="invisible"
+            android:src="@drawable/simonturn"/>
+    
+    <ImageView android:id="@+id/playerTurn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/yourturn"/>
+    
+    <ImageView android:id="@+id/loser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/simonlose"/>
+   
+</RelativeLayout>

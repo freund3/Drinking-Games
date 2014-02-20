@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/redvelvetcrop">
+    
+    <Button 
+        android:id="@+id/twentyoneAces"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:text="@string/twentyoneAces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="twentyoneAces"/>
+    
+    <Button 
+        android:id="@+id/circleofDeath"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:text="@string/circleofDeath"
+        android:layout_width="match_parent"
+        android:layout_below="@id/twentyoneAces"
+        android:layout_height="wrap_content"
+        android:onClick="circleofDeath"/>
+    
+    <Button 
+        android:id="@+id/simonSays"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:text="@string/simonSays"
+        android:layout_width="match_parent"
+        android:layout_below="@id/circleofDeath"
+        android:layout_height="wrap_content"
+        android:onClick="simonSays"/>
+    
+    <Button 
+        android:id="@+id/killer"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:text="@string/killer"
+        android:layout_width="match_parent"
+        android:layout_below="@id/simonSays"
+        android:layout_height="wrap_content"
+        android:onClick="killer"/>
+    
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TwentyOne Aces</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="simonSays">Simon Says</string>
+    <string name="killer">Killer</string>
+    <string name="killerStart">Start Game</string>
+    <string name="victims">Howmany Victims?</string>
+    <string name="killerdetective">Killer or Detective?</string>
+    <string name="start">Start Game</string>
+    <string name="roll">Roll Dice</string>
+    <string name="draw_card">Draw Card</string>
+    <string name="twentyoneAces">Twentyone Aces</string>
+    <string name="circleofDeath">Circle of Death</string>
+    <string name="title_activity_sft">TwentyOne Aces</string>
+    <string name="title_activity_circle_of_death">CircleOfDeath</string>
+    <string name="title_activity_simon_says">SimonSays</string>
+    <string name="title_activity_killer">Killer</string>
+
+</resources>
