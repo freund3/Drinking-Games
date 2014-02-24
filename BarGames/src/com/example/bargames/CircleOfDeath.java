@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class CircleOfDeath extends Activity {
@@ -32,6 +33,7 @@ public class CircleOfDeath extends Activity {
 	int sound_shuffle;
 	int sound_flip;
 	int index;
+	RelativeLayout rv1, rv2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,17 @@ public class CircleOfDeath extends Activity {
 		card_picture = (ImageView) findViewById(R.id.imageView);
 		card_rule = (TextView) findViewById(R.id.cardRules);
 		card_description = (TextView) findViewById(R.id.cardDescription);
+		rv1 = (RelativeLayout) findViewById(R.id.gameScreen);
+        rv2 = (RelativeLayout) findViewById(R.id.description);
 
 		handler=new Handler(callback);
 	}
+	
+	public void startGame(View arg0){
+    	rv2.setVisibility(View.INVISIBLE);
+    	rv1.setVisibility(View.VISIBLE);
+    	shuffle_sound.play(sound_shuffle,1.0f,1.0f,0,0,1.0f);
+    }
 	
 	public void HandleClick(View arg0) {
         if(!newCard) {

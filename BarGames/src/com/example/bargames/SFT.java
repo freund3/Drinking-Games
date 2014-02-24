@@ -14,6 +14,7 @@ import android.os.Message;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class SFT extends Activity {
@@ -25,6 +26,7 @@ public class SFT extends Activity {
     ImageView newCount1;
     ImageView newCount2;
     ImageView event;
+    RelativeLayout rv1, rv2;
     Random rng = new Random();    //generate random numbers
     SoundPool dice_sound = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
     int sound_id;        //Used to control sound stream return by SoundPool
@@ -44,6 +46,8 @@ public class SFT extends Activity {
         //load dice sound
         sound_id=dice_sound.load(this,R.raw.shake_dice,1);
         //get reference to image widget
+        rv1 = (RelativeLayout) findViewById(R.id.gameScreen);
+        rv2 = (RelativeLayout) findViewById(R.id.description);
         dice_picture1 = (ImageView) findViewById(R.id.imageView1);
         dice_picture2 = (ImageView) findViewById(R.id.imageView2);
         dice_picture3 = (ImageView) findViewById(R.id.imageView3);
@@ -57,6 +61,11 @@ public class SFT extends Activity {
         //link handler to callback
         handler=new Handler(callback);
      }
+    
+    public void startGame(View arg0){
+    	rv2.setVisibility(View.INVISIBLE);
+    	rv1.setVisibility(View.VISIBLE);
+    }
  
     //User pressed dice, lets start
     public void HandleClick(View arg0) {

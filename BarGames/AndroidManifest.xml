@@ -38,6 +38,10 @@
             android:name="com.example.bargames.Killer"
             android:label="@string/title_activity_killer" >
         </activity>
+        <activity
+            android:name="com.example.bargames.HighLow"
+            android:label="@string/title_activity_high_low" >
+        </activity>
     </application>
 
 </manifest>

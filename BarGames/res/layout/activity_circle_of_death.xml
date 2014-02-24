@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,12 +7,55 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CircleOfDeath" 
-    android:background="@drawable/redvelvetcrop"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="@drawable/redvelvetcrop">
 
+    <RelativeLayout android:id="@+id/description"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:visibility="visible">
+    	
+    	<ImageView android:id="@+id/rules" 
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:src="@drawable/rules"/>
+    	
+    	<TextView
+    	    android:id="@+id/rulesText"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/rules"
+    	    android:paddingLeft="10dp"
+ 			android:paddingBottom="15dp"
+    	    android:text="@string/circlerules"
+    	    android:textColor="#ffffff"
+    	    android:textSize="16sp" />
+    	
+    	<Button android:id="@+id/startAces"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/button"
+        	style="@style/button_text"
+        	android:text="@string/killerStart"
+        	android:layout_below="@id/rulesText"
+        	android:layout_centerHorizontal="true"
+        	android:onClick="startGame"
+        	android:paddingLeft="30dp"
+       		android:paddingRight="30dp"/>
+	</RelativeLayout>
+    
+     <RelativeLayout android:id="@+id/gameScreen" 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:visibility="invisible">
+    	
+        <LinearLayout 
+            android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+    		android:orientation="vertical" 
+    		android:gravity="center">
     	<ImageView android:id="@+id/imageView"
-    	    android:layout_width="fill_parent"
+    	    android:layout_width="wrap_content"
     	    android:layout_height="0dp"
     	    android:layout_gravity="center"
     	    android:layout_weight=".5"
@@ -43,10 +86,12 @@
         	style="@style/button_text"
         	android:text="@string/draw_card"
         	android:onClick="HandleClick"
-        	android:gravity="center_horizontal"
+        	android:layout_gravity="center"
         	android:paddingLeft="30dp"
         	android:paddingRight="30dp"/>
+    	</LinearLayout>
+    	</RelativeLayout>
     	          
-    </LinearLayout>
+    </RelativeLayout>
     
    

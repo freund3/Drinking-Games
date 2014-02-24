@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HighLow" 
+    android:background="@drawable/redvelvetcrop">
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <RelativeLayout android:id="@+id/description"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:paddingBottom="@dimen/activity_vertical_margin"
+    	android:paddingLeft="@dimen/activity_horizontal_margin"
+    	android:paddingRight="@dimen/activity_horizontal_margin"
+   		android:paddingTop="@dimen/activity_vertical_margin"
+    	android:visibility="visible">
+    	
+    	<ImageView android:id="@+id/rules" 
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:src="@drawable/rules"/>
+    	
+    	<TextView
+    	    android:id="@+id/rulesText"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/rules"
+    	    android:paddingLeft="10dp"
+ 			android:paddingBottom="15dp"
+    	    android:text="@string/highlowrules"
+    	    android:textColor="#ffffff"
+    	    android:textSize="16sp" />
+    	
+    	<Button android:id="@+id/startAces"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/button"
+        	style="@style/button_text"
+        	android:text="@string/killerStart"
+        	android:layout_below="@id/rulesText"
+        	android:layout_centerHorizontal="true"
+        	android:onClick="startGame"
+        	android:paddingLeft="30dp"
+       		android:paddingRight="30dp"/>
+	</RelativeLayout>
+	</ScrollView>
+	
+    <RelativeLayout android:id="@+id/gameScreen" 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:visibility="invisible">
+    	
+        <LinearLayout  android:id="@+id/card"
+            android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+    		android:orientation="vertical" 
+    		android:gravity="center">
+    		
+        <ImageView android:id="@+id/cardImg"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="0dp"
+    	    android:layout_gravity="center"
+    	    android:layout_weight=".6"/>
+    	
+        <LinearLayout android:id="@+id/buttons"
+        	android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:orientation="horizontal">
+    		
+        <Button android:id="@+id/high"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/button"
+        	style="@style/button_text"
+        	android:text="@string/high"
+        	android:onClick="selectHigh"
+        	android:paddingLeft="30dp"
+       		android:paddingRight="30dp"/>
+        
+        <Button android:id="@+id/low"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/button"
+        	style="@style/button_text"
+        	android:text="@string/low"
+        	android:onClick="selectLow"
+        	android:paddingLeft="30dp"
+       		android:paddingRight="30dp"/>
+        
+        </LinearLayout>
+      
+   	<LinearLayout android:id="@+id/counterLayout"
+        android:layout_width="wrap_content"
+    	android:layout_height="0dp"
+    	android:orientation="horizontal"
+    	android:layout_weight=".2"
+    	android:paddingTop="20dp">
+    	
+    	<ImageView android:id="@+id/counter2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:src="@drawable/nmb0"/>
+     
+     	<ImageView android:id="@+id/counter1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:src="@drawable/nmb0"/>
+    </LinearLayout>
+    
+   	<LinearLayout android:id="@+id/endCounterLayout"
+        android:layout_width="wrap_content"
+		android:layout_height="0dp"
+		android:orientation="horizontal"
+		android:layout_weight=".2"
+		android:visibility="invisible">
+     	
+   	    <ImageView android:id="@+id/drink"
+        	android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center"
+        	android:layout_weight=".6"
+        	android:src="@drawable/drink2"/>
+    	
+    	<ImageView android:id="@+id/endCounter2"
+        	android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight=".2"
+        	android:layout_gravity="center"/>
+     
+     	<ImageView android:id="@+id/endCounter1"
+        	android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        	android:layout_weight=".2"
+        	android:layout_gravity="center"/>
+     	
+     	
+    </LinearLayout>
+    </LinearLayout>     
+    </RelativeLayout>
+
+</RelativeLayout>

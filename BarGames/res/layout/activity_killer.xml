@@ -2,17 +2,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#000000"
     tools:context=".Killer" >
+    
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <RelativeLayout android:id="@+id/description"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:paddingBottom="@dimen/activity_vertical_margin"
+    	android:paddingLeft="@dimen/activity_horizontal_margin"
+    	android:paddingRight="@dimen/activity_horizontal_margin"
+    	android:paddingTop="@dimen/activity_vertical_margin"
+    	android:visibility="visible"
+    	android:background="@drawable/redvelvetcrop">
+    	
+    	<ImageView android:id="@+id/rules" 
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:src="@drawable/rules"/>
+    	
+    	<TextView
+    	    android:id="@+id/rulesText"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/rules"
+    	    android:paddingLeft="10dp"
+ 			android:paddingBottom="11dp"
+    	    android:text="@string/killerrules"
+    	    android:textColor="#ffffff"
+    	    android:textSize="16sp" />
+    	
+    	<TextView
+    	    android:id="@+id/rulesText1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/rulesText"
+    	    android:gravity="center"
+    	    android:paddingLeft="10dp"
+ 			android:paddingBottom="11dp"
+    	    android:text="@string/killerrules1"
+    	    android:textColor="#ffffff"
+    	    android:textSize="30sp" />
+    	
+    	<TextView
+    	    android:id="@+id/rulesText2"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/rulesText1"
+    	    android:paddingLeft="10dp"
+ 			android:paddingBottom="11dp"
+    	    android:text="@string/killerrules2"
+    	    android:textColor="#ffffff"
+    	    android:textSize="16sp" />
+    	
+    	<Button android:id="@+id/startAces"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/button"
+        	style="@style/button_text"
+        	android:text="@string/killerStart"
+        	android:layout_below="@id/rulesText2"
+        	android:layout_centerHorizontal="true"
+        	android:onClick="killerStart"
+        	android:paddingLeft="30dp"
+       		android:paddingRight="30dp"/>
+	</RelativeLayout>
+	</ScrollView>
 
+ 	<RelativeLayout android:id="@+id/killerScreen" 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="#000000"
+    	android:visibility="invisible">
+    	
     <RelativeLayout android:id="@+id/startScreen"
         android:layout_width="match_parent"
-    	android:layout_height="match_parent">
-        "
+    	android:layout_height="match_parent"
+    	android:background="#000000">
+    	
     <NumberPicker android:id="@+id/np"
    		android:layout_width="wrap_content"
    		android:layout_height="wrap_content"
@@ -68,5 +138,6 @@
    		android:layout_centerHorizontal="true"
    		android:visibility="invisible"
    		android:src="@drawable/killerstart"/>
+    </RelativeLayout>
 
 </RelativeLayout>

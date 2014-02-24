@@ -43,4 +43,14 @@
         android:layout_height="wrap_content"
         android:onClick="killer"/>
     
+    <Button 
+        android:id="@+id/highLow"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:text="@string/highLow"
+        android:layout_width="match_parent"
+        android:layout_below="@id/killer"
+        android:layout_height="wrap_content"
+        android:onClick="highLow"/>
+    
 </RelativeLayout>

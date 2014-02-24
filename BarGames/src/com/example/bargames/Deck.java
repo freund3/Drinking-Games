@@ -44,4 +44,8 @@ public class Deck {
 		public String getRule(int index){
 			return deck[index].rule;
 		}
+		
+		public int getNumber(int index){
+			return deck[index].number;
+		}
 }

@@ -33,4 +33,9 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this,Killer.class);
     	startActivity(intent);
     }
+    
+    public void highLow(View view){
+    	Intent intent = new Intent(this,HighLow.class);
+    	startActivity(intent);
+    }
 }

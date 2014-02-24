@@ -3,7 +3,6 @@
 
     <string name="app_name">TwentyOne Aces</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="simonSays">Simon Says</string>
     <string name="killer">Killer</string>
     <string name="killerStart">Start Game</string>
@@ -11,6 +10,9 @@
     <string name="killerdetective">Killer or Detective?</string>
     <string name="start">Start Game</string>
     <string name="roll">Roll Dice</string>
+    <string name ="high">High</string>
+    <string name ="highLow">High-Low</string>
+    <string name="low">Low</string>
     <string name="draw_card">Draw Card</string>
     <string name="twentyoneAces">Twentyone Aces</string>
     <string name="circleofDeath">Circle of Death</string>
@@ -18,5 +20,41 @@
     <string name="title_activity_circle_of_death">CircleOfDeath</string>
     <string name="title_activity_simon_says">SimonSays</string>
     <string name="title_activity_killer">Killer</string>
+    <string name="acesrules">The game is played by counting the 1\'s that are rolled.\n\n
+        
+        &#8226; Each Player takes a turn 
+          rolling the dice.\n\n
+          
+        &#8226; The person who rolls the seventh 
+          \'1\' gets to pick a shot.\n\n
+          
+        &#8226; The person who rolls the 
+          fourteenth \'1\' gets the honor 
+          of paying for the shot.\n\n
+          
+        &#8226; The person who rolls the 
+          twenty-first \'1\' has to drink the shot.</string>
+    <string name="circlerules">A turn in this drinking game consists of drawing a single card, and then performing an action associated with that card.\n\n</string>
+    <string name="simonrules">Simon Says is a game of memory. Follow the patterns of lights for as long as you can. 
+        There are two ways to play \n \n
+        &#8226; Each player plays an individual game. Person with the lowest score drinks!\n\n
+        &#8226; Players sit in a circle. Each player takes a turn and then passes it to the right. The person that fails, drinks!</string>
+    <string name="killerrules">This game is about secrecy! Each player is assigned a role: Killer, Detective or Victim. \n \n
+        &#8226; Killer: There is only one killer. Kill other players by winking at them.\n \n
+        &#8226; Detective: There is only one detective. Your job is to find the killer.\n \n
+        &#8226; Victim: Everyone else is a possible victim of the killer.\n \n </string>
+    <string name="killerrules1"> How to Play</string>
+    <string name="killerrules2">        Select howmany players will be playing. The first player will click the role button without showing other players. KEEP IT A SECRET! After viewing your role, pass the phone to the next player.
+        Once all players have a role, the game starts.\n \n
+        The killers job is to kill other players by winking at them. Once the killer winks at someone, if they are a Victim, they must take a large gulp of their drink and say "I Have been Killed!" \n \n
+        The detective will then announce himself and will get a chance to guess who the killer is. If the detective guesses right, the game is over and the killer drinks, otherwise the detective must drink and the game continues. \n \n
+        If the killer winks at the detective for the first kill, the killer is busted and must finish his entire drink! \n \n
+        (Optional: All dead players pitch in to buy the killer a drink) </string>
+    <string name="title_activity_high_low">HighLow</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="highlowrules">One player is dealt a card. He/She then guesses whether the next card is higher or lower than the one already dealt. If correct, he/she guesses again. After guessing at least three cards, the play may continue or pass, BUT only after three cards. If the player passes, the next player starts where the previous left off. \n \n
+        When a player is incorrect, he/she drinks for each card showing. SO, the strategy is to build up a lot of cards and pass it to the next player (who if loses must drink more!) \n \n
+        Equal/Same cards that show up are an automatic loss and you must drink!</string>
 
 </resources>

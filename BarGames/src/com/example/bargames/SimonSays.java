@@ -22,10 +22,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class SimonSays extends Activity {
 
-	int[] inputs = new int[150]; // 1 == green, 2 == yellow, 3 == red, 4 == blue
+	int[] inputs = new int[99]; // 1 == green, 2 == yellow, 3 == red, 4 == blue
 	int index, counter, userInput;
 	Random rng = new Random();
 	boolean showPattern;
@@ -36,6 +37,7 @@ public class SimonSays extends Activity {
 	ImageView simonTurn;
 	ImageView yourTurn;
 	ImageView simonLoser;
+	ImageView endCounter1, endCounter2;
 	Button startGame;
 	boolean gameInSession = false;
 	Handler handler = new Handler(); 
@@ -47,6 +49,11 @@ public class SimonSays extends Activity {
 	SoundPool beep3 = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
 	SoundPool beep4 = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
 	SoundPool error = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
+	RelativeLayout rv1, rv2;
+	ImageView imgCounter1;
+    ImageView imgCounter2;
+    LinearLayout imgCounterLayout, endCounterLayout;
+    int[] d = new int[10];
 	
 	OnClickListener redListener = new OnClickListener() {
 		  public void onClick(View v) { redClicked(); }
@@ -81,6 +88,14 @@ public class SimonSays extends Activity {
 		beep_id1=beep1.load(this,R.raw.beep1,1);
 		beep_id2=beep2.load(this,R.raw.beep2,1);
 		error_id=error.load(this,R.raw.error,1);
+		rv1 = (RelativeLayout) findViewById(R.id.gameScreen);
+        rv2 = (RelativeLayout) findViewById(R.id.description);
+        imgCounter1 = (ImageView) findViewById(R.id.counter1);
+        imgCounter2 = (ImageView) findViewById(R.id.counter2);
+        endCounter1 = (ImageView) findViewById(R.id.endCounter1);
+        endCounter2 = (ImageView) findViewById(R.id.endCounter2);
+        imgCounterLayout = (LinearLayout) findViewById(R.id.counterLayout);
+        endCounterLayout = (LinearLayout) findViewById(R.id.endCounterLayout);
 		red.setOnClickListener(redListener);
 		green.setOnClickListener(greenListener);
 		blue.setOnClickListener(blueListener);
@@ -88,18 +103,22 @@ public class SimonSays extends Activity {
 		simonLoser.setVisibility(View.INVISIBLE);
 		simonTurn.setVisibility(View.INVISIBLE);
 		yourTurn.setVisibility(View.INVISIBLE);
-		
+		imgCounterLayout.setVisibility(View.INVISIBLE);
+		setupDrawables();
 		initInputs();
 	}
 	
-	
 	public void startGame(View arg0){
 		if(!gameInSession){
+			endCounterLayout.setVisibility(View.INVISIBLE);
+			rv2.setVisibility(View.INVISIBLE);
+			rv1.setVisibility(View.VISIBLE);
 			simonLoser.setVisibility(View.INVISIBLE);
 			simonTurn.setVisibility(View.INVISIBLE);
 			yourTurn.setVisibility(View.INVISIBLE);
 			gameInSession = true;
 			startGame.setVisibility(View.INVISIBLE);
+			imgCounterLayout.setVisibility(View.VISIBLE);
 			showingPattern = true;
 			new SimonsTurn().execute();
 		}
@@ -107,12 +126,14 @@ public class SimonSays extends Activity {
 	
 	public void gameOver(){
 		gameInSession = false;
+		imgCounterLayout.setVisibility(View.INVISIBLE);
 		error.play(error_id,1.0f,1.0f,0,0,1.0f);
 		counter = 0;
 		index = 0;
 		timer = 250;
 		userInput = 0;
 		initInputs();
+		endCounterLayout.setVisibility(View.VISIBLE);
 		simonLoser.setVisibility(View.VISIBLE);
 		startGame.setVisibility(View.VISIBLE);
 		
@@ -219,7 +240,7 @@ public class SimonSays extends Activity {
         			red.setImageResource(R.drawable.redpress);
         		}
         		if(inputs[counter] == 4){
-        			beep2.play(beep_id1,1.0f,1.0f,0,0,1.0f);
+        			beep1.play(beep_id1,1.0f,1.0f,0,0,1.0f);
         			blue.setImageResource(R.drawable.bluepress);
         		}
         	}
@@ -273,9 +294,18 @@ public class SimonSays extends Activity {
 	        @Override  
 	        protected void onPreExecute()  
 	        {  
+	        	
+	        		int second = index/10;
+	        		int first = index%10;
+	        		imgCounter2.setImageResource(d[second]);
+	        		imgCounter1.setImageResource(d[first]);	
+	        		endCounter2.setImageResource(d[second]);
+	        		endCounter1.setImageResource(d[first]);	
+	        		
 
-	    		showingPattern = true;
-	    		simonTurn.setVisibility(View.VISIBLE);
+	        		showingPattern = true;
+	        		simonTurn.setVisibility(View.VISIBLE);
+	        	
 	        }  
 	  
 	        //The code to be executed in a background thread.  
@@ -301,8 +331,13 @@ public class SimonSays extends Activity {
 	        @Override  
 	        protected void onPostExecute(Void result)  
 	        {  
-	        	simonTurn.setVisibility(View.INVISIBLE);
-				showPattern();	
+	        	if(index == 99){
+	        		gameOver();
+	        	}
+	        	else{
+	        		simonTurn.setVisibility(View.INVISIBLE);
+	        		showPattern();	
+	        	}
 	        }  
 	    }
 		
@@ -422,6 +457,19 @@ public class SimonSays extends Activity {
 	        	}
 	        }
 		}
+		
+		void setupDrawables(){
+	    	d[0] = R.drawable.nmb0;
+	    	d[1] = R.drawable.n1;
+	    	d[2] = R.drawable.n2;
+	    	d[3] = R.drawable.n3;
+	    	d[4] = R.drawable.n4;
+	    	d[5] = R.drawable.n5;
+	    	d[6] = R.drawable.n6;
+	    	d[7] = R.drawable.n7;
+	    	d[8] = R.drawable.n8;
+	    	d[9] = R.drawable.n9;
+	    }
 		
 		   //Clean up
 	    @Override
